@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class LobbyMain extends JavaPlugin {
     private static LobbyMain instance;
+
     public LobbyMain() {
         instance = this;
     }
@@ -28,7 +29,11 @@ public final class LobbyMain extends JavaPlugin {
     public void onEnable() {
         BungeeUtils.init();
 
-        getCommand("lobby").setExecutor(new LobbyCommand());
+        LobbyCommand lobbyCommand = new LobbyCommand();
+
+        getCommand("lobby").setExecutor(lobbyCommand);
+        getCommand("l").setExecutor(lobbyCommand);
+        getCommand("hub").setExecutor(lobbyCommand);
     }
 
     public static LobbyMain getInstance() {

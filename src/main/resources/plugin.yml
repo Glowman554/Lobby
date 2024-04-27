@@ -5,3 +5,7 @@ api-version: '1.20'
 commands:
   lobby:
     permission: lobby.lobby
+  l:
+    permission: lobby.lobby
+  hub:
+    permission: lobby.lobby

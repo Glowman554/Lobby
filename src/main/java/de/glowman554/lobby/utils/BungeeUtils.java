@@ -9,14 +9,17 @@ import org.bukkit.plugin.messaging.PluginMessageListener;
 
 public class BungeeUtils implements Listener {
     public static void init() {
-        LobbyMain.getInstance().getServer().getMessenger().registerOutgoingPluginChannel(LobbyMain.getInstance(), "BungeeCord");
-        LobbyMain.getInstance().getServer().getMessenger().registerIncomingPluginChannel(LobbyMain.getInstance(), "BungeeCord", new PluginMessageListener() {
-            @Override
-            public void onPluginMessageReceived(String channel, Player player, byte[] message) {
+        LobbyMain.getInstance().getServer().getMessenger().registerOutgoingPluginChannel(LobbyMain.getInstance(),
+                "BungeeCord");
+        LobbyMain.getInstance().getServer().getMessenger().registerIncomingPluginChannel(LobbyMain.getInstance(),
+                "BungeeCord", new PluginMessageListener() {
+                    @Override
+                    public void onPluginMessageReceived(String channel, Player player, byte[] message) {
 
-            }
-        });
+                    }
+                });
     }
+
     public static void sendPlayer(Player player, String server) {
         ByteArrayDataOutput dataOutput = ByteStreams.newDataOutput();
         dataOutput.writeUTF("Connect");
